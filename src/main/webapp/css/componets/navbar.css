@@ -1,0 +1,61 @@
+@import url('../colors.css');
+
+.bg-body-tertiary {
+    background-color: var(--color4) !important;
+    border-bottom: 2px solid var(--color4);
+}
+
+.container-fluid {
+    margin: 1%;
+}
+
+.navbar-brand {
+    color: var(--color6);
+    margin-left: 1%;
+    margin-right: 2%;
+}
+
+.fa-solid {
+    font-size: 40px;
+}
+
+.title {
+    all: unset;
+    color: var(--color6);
+    font-size: 38px;
+    font-weight: bold;
+    display: inline;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: end;
+}
+
+.active {
+    background-color: var(--color6);
+    border: 2px solid var(--color4);
+    border-radius: 10px;
+}
+
+.nav-item {
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    font-weight: 500;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--color2);
+    --bs-btn-border-color: var(--color1);
+    --bs-btn-hover-bg: var(--color3);
+    --bs-btn-hover-border-color: var(--color1);
+    height: 40px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.btn-light {
+    height: 40px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
