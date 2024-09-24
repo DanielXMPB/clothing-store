@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../css/search.css">
 </head>
 
-<body>
+<body ng-app="searchApp as app">
 
   <navbar-componet></navbar-componet>
 
@@ -135,62 +135,17 @@
           <label class="btn btn-outline-primary" for="btnradio4">Rating</label>
         </div>
       </div>
-      <div class="div-cards">
+      <div class="div-cards" ng-repeat="clothe in app.clothes" >
         <div class="card" style="width: 18rem;">
-          <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg" class="card-img-top"
+          <img src={clothe.image} class="card-img-top"
             alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">$0.00</p>
+            <h5 class="card-title">{clothe.name}</h5>
+            <p class="card-text">${clothe.price}</p>
             <div class="div-buy">
               <a href="#" class="btn btn-primary">Buy</a>
             </div>
           </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">$0.00</p>
-            <div class="div-buy">
-              <a href="#" class="btn btn-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">$0.00</p>
-            <div class="div-buy">
-              <a href="#" class="btn btn-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">$0.00</p>
-            <div class="div-buy">
-              <a href="#" class="btn btn-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">$0.00</p>
-            <div class="div-buy">
-              <a href="#" class="btn btn-primary">Buy</a>
-            </div>
-          </div>
-        </div>
       </div>
       <div>
         <nav aria-label="Page navigation example">
@@ -222,6 +177,7 @@
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 <script src="../js/search.js"></script>
 <script src="../js/scripts.js"></script>
 

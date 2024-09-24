@@ -38,15 +38,6 @@ public class Clothe {
         this.types = types;
     }
 
-    public Clothe(String idClothe, String name, Integer price, Integer stock, double rating, String image) {
-        this.idClothe = idClothe;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.rating = rating;
-        this.image = image;
-    }
-
     public String getIdClothe() {
         return idClothe;
     }

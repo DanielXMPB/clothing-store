@@ -17,3 +17,25 @@ noUiSlider.create(snapSlider, {
 snapSlider.noUiSlider.on('update', function (values, handle) {
     snapValues[handle].innerHTML = values[handle];
 });
+
+var app = angular.module('searchApp', []);
+app.controller('searchCtrl', function ($scope, $http) {
+    var app = this;
+    app.clothes = [];
+
+    app.search = function () {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8080/clothing-store/SvClothe',
+            params: { action: 'getAllClothes' }
+        }).then(function(response) {
+            app.clothes = response.data.clothes;
+        }, function(error) {
+            console.error('Error', error);
+        });
+    }
+
+    app.$onInit = function () {
+        app.search();
+    }
+})

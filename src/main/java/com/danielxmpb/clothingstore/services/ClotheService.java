@@ -16,16 +16,21 @@ public class ClotheService {
 
     public List<Clothe> getAllClothes() throws SQLException {
         List<Clothe> clothes = new ArrayList<>();
-        String query = "SELECT cl.id_clothe, cl.name, cl.price, cl.stock, cl.rating FROM clothes cl;";
-        ResultSet response = new DatabaseConnection().select(query);
-        while (response.next()) {
-            Clothe clothe = new Clothe();
-            clothe.setIdClothe(response.getString("id_clothe"));
-            clothe.setName(response.getString("name"));
-            clothe.setPrice(response.getInt("price"));
-            clothe.setStock(response.getInt("stock"));
-            clothe.setRating(response.getDouble("rating"));
-            clothes.add(clothe);
+        String query = "SELECT cl.id_clothe, cl.name, cl.price, cl.stock, cl.rating, cl.image FROM clothes cl;";
+        try {
+            ResultSet response = new DatabaseConnection().select(query);
+            while (response.next()) {
+                Clothe clothe = new Clothe();
+                clothe.setIdClothe(response.getString("id_clothe"));
+                clothe.setName(response.getString("name"));
+                clothe.setPrice(response.getInt("price"));
+                clothe.setStock(response.getInt("stock"));
+                clothe.setRating(response.getDouble("rating"));
+                clothe.setImage(response.getString("image"));
+                clothes.add(clothe);
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
         }
         return clothes;
     }

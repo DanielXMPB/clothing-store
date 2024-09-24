@@ -9,4 +9,12 @@
             30
         </session-timeout>
     </session-config>
+    <servlet>
+        <servlet-name>SvClothe</servlet-name>
+        <servlet-class>com.danielxmpb.clothingstore.controllers.SvClothe</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SvClothe</servlet-name>
+        <url-pattern>/SvClothe</url-pattern>
+    </servlet-mapping>
 </web-app>
