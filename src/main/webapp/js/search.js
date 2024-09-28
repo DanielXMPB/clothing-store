@@ -19,7 +19,7 @@ snapSlider.noUiSlider.on('update', function (values, handle) {
 });
 
 var app = angular.module('searchApp', []);
-app.controller('searchCtrl', function ($scope, $http) {
+app.controller('searchCtrl', function ($http) {
     var app = this;
     app.clothes = [];
 
@@ -29,7 +29,8 @@ app.controller('searchCtrl', function ($scope, $http) {
             url: 'http://localhost:8080/clothing-store/SvClothe',
             params: { action: 'getAllClothes' }
         }).then(function(response) {
-            app.clothes = response.data.clothes;
+            console.log('Success', response);
+            app.clothes = response.data;
         }, function(error) {
             console.error('Error', error);
         });

@@ -2,7 +2,6 @@ package com.danielxmpb.clothingstore.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -94,22 +93,6 @@ public class DatabaseConnection {
         } else {
             disconnect(conn);
             return false;
-        }
-    }
-
-    @SuppressWarnings("finally")
-    public ResultSet select(String query) {
-        Connection conn = connect();
-        ResultSet response = null;
-        try {
-            Statement st = conn.createStatement();
-            response = st.executeQuery(query);
-            st.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            disconnect(conn);
-            return response;
         }
     }
 
